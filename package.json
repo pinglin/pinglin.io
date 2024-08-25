@@ -1,19 +1,64 @@
 {
   "name": "pinglin.io",
+  "type": "module",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,astro}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,mdx,json,yml,yaml,astro}": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ping-Lin Chang",
+  "license": "CC BY",
   "dependencies": {
-    "@astrojs/vercel": "^3.7.4",
-    "astro": "^2.9.6"
+    "@astrojs/mdx": "^3.1.5",
+    "@astrojs/preact": "^3.5.3",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.8.1",
+    "@vercel/analytics": "^1.3.1",
+    "@vercel/speed-insights": "^1.0.12",
+    "astro": "^4.15.4",
+    "eslint-plugin": "^1.0.1",
+    "integration": "^0.3.1",
+    "preact": "^10.23.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "three": "^0.167.1",
+    "three-globe": "^2.31.1",
+    "typescript-eslint": "^8.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@types/three": "^0.167.2",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "eslint": "^9.10.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.45",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.10"
   }
 }
